@@ -296,6 +296,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .drag_Handle {
+    position: absolute;
     font-size: 25px;
     margin-right: 0px;
     cursor: grab;
