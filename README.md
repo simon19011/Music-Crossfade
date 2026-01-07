@@ -1,6 +1,9 @@
 # Music-Crossfade
 
-Music Crossfade is an application used for queuing and playing music and videos natively in your browser. It's main purpose is to fade from the current song to the next queued or played song. 
+Music Crossfade is an application used for queuing and playing songs/videos natively in your browser. It's main purpose is to fade from the current song to the next queued or played song. 
 
 ## Adding Songs
-This application is able to have users drop in their own local files (mp3, mp4, wav, etc.)
+Local files such as mp3, mp4, wav, etc. can be uploaded directly.
+Youtube URL links can be pasted in the "YouTube Search" tab and added to queue.
+All songs and videos can be downloaded and saved to "Library" on your local computer, stored on the browser (actual files cannot be directly accessed).
+Currently, YouTube videos cannot be saved to the "Library".
