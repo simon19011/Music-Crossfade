@@ -270,6 +270,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .queue_Element {
+    position: relative;
     background-color: var(--queue_Element_Color);
     border-bottom: 2px solid black;
     height: 70px;

@@ -59,8 +59,6 @@ class QueueManager {
         infoDiv.classList.add('queue-info');
         infoDiv.textContent = audio.artist || 'Unknown Artist';
 
-        dragHandle.style.position = 'absolute';
-
 
         contentDiv.appendChild(titleDiv);
         contentDiv.appendChild(infoDiv);
