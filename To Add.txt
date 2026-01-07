@@ -1,0 +1,17 @@
+Youtube Support
+Video Support
+Play Video
+Show Album Cover
+
+Remove Button
+ - Appears only on hover?
+
+All Buttons and Labels = Images?
+Add Song Text on Queue
+ - Removed after adding song
+
+Editable colour theme
+ - Each colour is independant
+
+Save Settings to .txt file
+Option to Save files (stored locally)
