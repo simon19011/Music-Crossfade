@@ -45,7 +45,7 @@ let isDraggingQueueElement = false;
 let isDraggingSearch = false;
 let isDraggingLibrary = false;
 let pendingRemoveCurrentSong = undefined;
-let resizeOn = false;
+let resizeOn = true;
 
 // Global Variables needed across functions
 let currentVolume = 1;
