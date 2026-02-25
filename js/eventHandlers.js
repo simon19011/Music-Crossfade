@@ -113,10 +113,7 @@ class EventHandlers {
     static setUpWindowEvents() {
         window.addEventListener('resize', () => {
             if (resizeOn) {
-                DOMManager.centerQueue();
-                DOMManager.centerPlayer();
-                DOMManager.centerSearch();
-                DOMManager.centerLibrary();
+                DOMManager.centerElements();
             }
         });
     }

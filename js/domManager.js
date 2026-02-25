@@ -50,33 +50,53 @@ class DOMManager {
     }
 
     static centerPlayer() {
-        let rect = this.elements.fullPlayer.getBoundingClientRect();
+        let player = this.elements.fullPlayer;
+
+        let minHeight = parseInt(getComputedStyle(player).minHeight);
+        let targetHeight = window.innerHeight * 0.45;
+        player.style.height = `${Math.max(targetHeight, minHeight)}px`;
+
+        let rect = player.getBoundingClientRect();
+
         let centerX = (window.innerWidth * 0.5) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.30) - (rect.height / 2);
-        this.elements.fullPlayer.style.left = `${centerX}px`;
-        this.elements.fullPlayer.style.top = `${centerY}px`;
+        let centerY = (window. innerHeight * 0.3) - (rect.height / 2);
+
+        player.style.left = `${centerX}px`;
+        player.style.top = `${centerY}px`;
     }
 
     static centerQueue() {
-        let rect = this.elements.queueBox.getBoundingClientRect();
+        let queue = this.elements.queueBox;
+
+        let minHeight = parseInt(getComputedStyle(queue).minHeight);
+        let targetHeight = window.innerHeight * 0.33;
+        queue.style.height = `${Math.max(targetHeight, minHeight)}px`;
+
+        let rect = queue.getBoundingClientRect();
+
         let centerX = (window.innerWidth * 0.5) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.4) + (rect.height / 2);
-        this.elements.queueBox.style.left = `${centerX}px`;
-        this.elements.queueBox.style.top = `${centerY}px`;
+        let centerY = (window. innerHeight * 0.45) + (rect.height / 2);
+
+        queue.style.left = `${centerX}px`;
+        queue.style.top = `${centerY}px`;
     }
 
     static centerSearch() {
         let rect = this.elements.searchBox.getBoundingClientRect();
+
         let centerX = (window.innerWidth * 0.25) - (rect.width / 2);
         let centerY = (window. innerHeight * 0.15) + (rect.height / 2);
+
         this.elements.searchBox.style.left = `${centerX}px`;
         this.elements.searchBox.style.top = `${centerY}px`;
     }
 
     static centerLibrary() {
         let rect = this.elements.libraryBox.getBoundingClientRect();
+
         let centerX = (window.innerWidth * 0.25) - (rect.width / 2);
         let centerY = (window. innerHeight * 0.65) - (rect.height / 2);
+
         this.elements.libraryBox.style.left = `${centerX}px`;
         this.elements.libraryBox.style.top = `${centerY}px`;
     }
