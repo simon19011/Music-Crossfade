@@ -65,47 +65,67 @@ class EventHandlers {
             document.body.style.userSelect = "none";
         });
 
+        DOMManager.elements.ambienceHeader.addEventListener('mousedown', (e) => {
+            isDraggingAmbience = true;
+            DOMManager.elements.ambienceHeader.style.cursor = 'grabbing';
+
+            let rect = DOMManager.elements.ambienceBox.getBoundingClientRect();
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
+
+            document.body.style.userSelect = "none";
+        });
+
         document.addEventListener('mouseup', () => {
         isDraggingPlayer = false;
         isDraggingQueue = false;
         isDraggingSearch = false;
         isDraggingLibrary = false;
+        isDraggingAmbience = false;
 
         DOMManager.elements.playerHeader.style.cursor = 'grab';
         DOMManager.elements.queueHeader.style.cursor = 'grab';
         DOMManager.elements.searchHeader.style.cursor = 'grab';
         DOMManager.elements.libraryHeader.style.cursor = 'grab';
+        DOMManager.elements.ambienceHeader.style.cursor = 'grab';
         document.body.style.userSelect = "auto";
         });
 
         document.addEventListener('mousemove', (e) => {
         // Moves the boxes when mouse is held down on headers
         if (isDraggingPlayer) {
-            let x = e.clientX - offsetX
+            let x = e.clientX - offsetX;
             let y = e.clientY - offsetY;
             DOMManager.elements.fullPlayer.style.left = `${x}px`;
             DOMManager.elements.fullPlayer.style.top = `${y}px`;
         }
 
         if (isDraggingQueue) {
-            let x = e.clientX - offsetX
+            let x = e.clientX - offsetX;
             let y = e.clientY - offsetY;
             DOMManager.elements.queueBox.style.left = `${x}px`;
             DOMManager.elements.queueBox.style.top = `${y}px`;
         }
 
         if (isDraggingSearch) {
-            let x = e.clientX - offsetX
+            let x = e.clientX - offsetX;
             let y = e.clientY - offsetY;
             DOMManager.elements.searchBox.style.left = `${x}px`;
             DOMManager.elements.searchBox.style.top = `${y}px`;
         }
 
         if (isDraggingLibrary) {
-            let x = e.clientX - offsetX
+            let x = e.clientX - offsetX;
             let y = e.clientY - offsetY;
             DOMManager.elements.libraryBox.style.left = `${x}px`;
             DOMManager.elements.libraryBox.style.top = `${y}px`;
+        }
+
+        if (isDraggingAmbience) {
+            let x = e.clientX - offsetX;
+            let y = e.clientY - offsetY;
+            DOMManager.elements.ambienceBox.style.left = `${x}px`;
+            DOMManager.elements.ambienceBox.style.top = `${y}px`;
         }
         });
     }

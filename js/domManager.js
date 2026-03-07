@@ -34,7 +34,10 @@ class DOMManager {
             searchResult : document.getElementById("search_Result"),
             libraryBox : document.getElementById("library_Box"),
             libraryHeader : document.getElementById("library_Header"),
-            libraryContents : document.getElementById("library_Contents")
+            libraryContents : document.getElementById("library_Contents"),
+            ambienceBox : document.getElementById("ambience_Box"),
+            ambienceHeader : document.getElementById("ambience_Header"),
+            ambienceContents : document.getElementById("ambience_Contents")
         };
 
         this.centerElements();
@@ -47,6 +50,7 @@ class DOMManager {
         this.centerQueue();
         this.centerSearch();
         this.centerLibrary();
+        this.centerAmbience();
     }
 
     static centerPlayer() {
@@ -99,5 +103,15 @@ class DOMManager {
 
         this.elements.libraryBox.style.left = `${centerX}px`;
         this.elements.libraryBox.style.top = `${centerY}px`;
+    }
+
+    static centerAmbience() {
+        let rect = this.elements.ambienceBox.getBoundingClientRect();
+
+        let centerX = (window.innerWidth * 0.75) - (rect.width / 2);
+        let centerY = (window.innerHeight * 0.65) - (rect.height / 2);
+
+        this.elements.ambienceBox.style.left = `${centerX}px`;
+        this.elements.ambienceBox.style.top = `${centerY}px`;
     }
 }

@@ -44,6 +44,7 @@ let isDraggingQueue = false;
 let isDraggingQueueElement = false;
 let isDraggingSearch = false;
 let isDraggingLibrary = false;
+let isDraggingAmbience = false;
 let pendingRemoveCurrentSong = undefined;
 let resizeOn = true;
 
