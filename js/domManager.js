@@ -4,6 +4,13 @@
 class DOMManager {
     // Set up DOM elements
     static elements = {};
+    static boxPositions = {
+        full_Player: { x: 0.5, y: 0.5, height: 0.48},
+        queue_Box: { x: 0.75, y: 0.25, height: 0.33},
+        search_Box: { x: 0.25, y: 0.15},
+        library_Box: { x: 0.25, y: 0.65},
+        ambience_Box: { x: 0.75, y: 0.65}
+    };
 
     static initialise() {
         this.elements = {
@@ -46,72 +53,23 @@ class DOMManager {
 
     // Center all DOM elements 
     static centerElements() {
-        this.centerPlayer();
-        this.centerQueue();
-        this.centerSearch();
-        this.centerLibrary();
-        this.centerAmbience();
-    }
+        Object.entries(this.boxPositions).forEach(([id, config]) => {
+            const el = document.getElementById(id);
 
-    static centerPlayer() {
-        let player = this.elements.fullPlayer;
+            if (config.height) {
+                let minHeight = parseInt(getComputedStyle(el).minHeight);
+                let targetHeight = window.innerHeight * config.height;
 
-        let minHeight = parseInt(getComputedStyle(player).minHeight);
-        let targetHeight = window.innerHeight * 0.45;
-        player.style.height = `${Math.max(targetHeight, minHeight)}px`;
+                el.style.height = `${Math.max(targetHeight, minHeight)}px`
+            }
+            
+            let rect = el.getBoundingClientRect();
 
-        let rect = player.getBoundingClientRect();
+            let centerX = (window.innerWidth * config.x) - rect.width / 2;
+            let centerY = (window.innerHeight * config.y) - rect.height / 2;
 
-        let centerX = (window.innerWidth * 0.5) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.3) - (rect.height / 2);
-
-        player.style.left = `${centerX}px`;
-        player.style.top = `${centerY}px`;
-    }
-
-    static centerQueue() {
-        let queue = this.elements.queueBox;
-
-        let minHeight = parseInt(getComputedStyle(queue).minHeight);
-        let targetHeight = window.innerHeight * 0.33;
-        queue.style.height = `${Math.max(targetHeight, minHeight)}px`;
-
-        let rect = queue.getBoundingClientRect();
-
-        let centerX = (window.innerWidth * 0.5) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.45) + (rect.height / 2);
-
-        queue.style.left = `${centerX}px`;
-        queue.style.top = `${centerY}px`;
-    }
-
-    static centerSearch() {
-        let rect = this.elements.searchBox.getBoundingClientRect();
-
-        let centerX = (window.innerWidth * 0.25) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.15) + (rect.height / 2);
-
-        this.elements.searchBox.style.left = `${centerX}px`;
-        this.elements.searchBox.style.top = `${centerY}px`;
-    }
-
-    static centerLibrary() {
-        let rect = this.elements.libraryBox.getBoundingClientRect();
-
-        let centerX = (window.innerWidth * 0.25) - (rect.width / 2);
-        let centerY = (window. innerHeight * 0.65) - (rect.height / 2);
-
-        this.elements.libraryBox.style.left = `${centerX}px`;
-        this.elements.libraryBox.style.top = `${centerY}px`;
-    }
-
-    static centerAmbience() {
-        let rect = this.elements.ambienceBox.getBoundingClientRect();
-
-        let centerX = (window.innerWidth * 0.75) - (rect.width / 2);
-        let centerY = (window.innerHeight * 0.65) - (rect.height / 2);
-
-        this.elements.ambienceBox.style.left = `${centerX}px`;
-        this.elements.ambienceBox.style.top = `${centerY}px`;
+            el.style.left = `${centerX}px`;
+            el.style.top = `${centerY}px`;
+        });
     }
 }

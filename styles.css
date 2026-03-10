@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb:hover {
     min-height: 200px;
     max-width: 100%;
     max-height: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.9);
     resize: both;
     overflow: auto;
     display: flex;
@@ -207,9 +207,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 #queue_Box {
     background-color: var(--box_Color);
-    width: 355px;
+    width: 300px;
     height: 350px;
-    min-width: 355px;
+    min-width: 225px;
     min-height: 200px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
     resize: both;
@@ -571,7 +571,7 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--box_Color);
     width: 300px;
     height: 250px;
-    min-width: 300px;
+    min-width: 225px;
     min-height: 170px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
     resize: both;
@@ -772,7 +772,7 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--box_Color);
     width: 300px;
     height: 250px;
-    min-width: 300px;
+    min-width: 225px;
     min-height: 170px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
     resize: both;

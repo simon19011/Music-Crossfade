@@ -39,12 +39,8 @@ let isPlaying = true;
 let isLoop = false;
 let isFading = false;
 let isChangingSong = false;
-let isDraggingPlayer = false;
-let isDraggingQueue = false;
 let isDraggingQueueElement = false;
-let isDraggingSearch = false;
-let isDraggingLibrary = false;
-let isDraggingAmbience = false;
+let activeDrag = null;
 let pendingRemoveCurrentSong = undefined;
 let resizeOn = true;
 
