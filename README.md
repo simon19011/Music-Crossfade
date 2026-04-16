@@ -2,6 +2,8 @@
 
 Music Crossfade is an application used for queuing and playing songs/videos natively in your browser. It's main purpose is to fade from the current song to the next queued or played song. 
 
+[Music Crossfade Web App](https://simon19011.github.io/Music-Crossfade/)
+
 ![alt text](https://github.com/simon19011/Music-Crossfade/blob/main/Sample%20Images/Crossfade%20Example.png "Crossfade Example")
 
 ## Adding Songs
