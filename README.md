@@ -23,7 +23,7 @@ This includes playlists but currently, only the first song of the playlist can b
 ## Song Library
 Songs can be added to the Song Library for cross session play. <br />
 Dragging queue items or files directly into the Song Library will save them into the browser database. <br />
-Clearing the browser chache will remove all songs from the library as they are saved to IndexedDB. <br />
+Clearing the browser cache will remove all songs from the library as they are saved to IndexedDB. <br />
 
 ## Ambience Library
 Currently unimplemented. <br />
