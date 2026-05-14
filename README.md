@@ -26,9 +26,10 @@ Dragging queue items or files directly into the Song Library will save them into
 Clearing the browser cache will remove all songs from the library as they are saved to IndexedDB. <br />
 
 ## Ambience Library
-Currently unimplemented. <br />
+Currently not implemented. <br />
 
 ## Known Bugs
 Local files cannot recognise artist name and thumbnails. <br />
 Currently, YouTube videos cannot be saved to the "Library". <br />
 Queue is cut off at the bottom. <br />
+Queue scroll sidebar spacing present even without scroll. <br />
